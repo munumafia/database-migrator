@@ -1,0 +1,14 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "commonjs",
+        "experimentalDecorators": true        
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "excude": [
+        "node_modules"
+    ]    
+}
