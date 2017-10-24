@@ -1,0 +1,20 @@
+{
+  "name": "mongo-migrator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sean Grimes <sean@codemunkey.net>",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "@types/mongodb": "^2.2.14",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^3.2.3",
+    "typescript": "^2.5.3"
+  },
+  "dependencies": {
+    "mongodb": "^2.2.33"
+  }
+}
