@@ -1,7 +1,7 @@
 import {DatabaseEngine} from './database-engine';
 
 export interface MigrationInfo {
-    timestamp : string,
+    timestamp : number,
     migration : any,
     databaseEngine : DatabaseEngine,
     version : string
@@ -10,7 +10,7 @@ export interface MigrationInfo {
 export class MigrationRegistry {
     private static _instance : MigrationRegistry;
     private _versions : Map<string, MigrationInfo[]> = new Map<string, MigrationInfo[]>();
-    private _migrations : Map<string, MigrationInfo> = new Map<string, MigrationInfo>();
+    private _migrations : Map<number, MigrationInfo> = new Map<number, MigrationInfo>();
     
     static get instance() {
         if (!MigrationRegistry._instance) {
@@ -18,6 +18,14 @@ export class MigrationRegistry {
         }
 
         return MigrationRegistry._instance;
+    }
+
+    get versions() {
+        return this._versions;
+    }
+
+    get migrations() {
+        return this._migrations;
     }
 
     addMigration(migrationInfo : MigrationInfo) {
