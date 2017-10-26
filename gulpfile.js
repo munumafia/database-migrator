@@ -1,5 +1,6 @@
 let gulp = require('gulp');
 let ts = require('gulp-typescript');
+let mocha = require('gulp-mocha');
 
 let tsProject = ts.createProject('tsconfig.json');
 
@@ -10,8 +11,13 @@ gulp.task('compile', function () {
     return tsResult.js.pipe(gulp.dest('dist'));
 });
 
-gulp.task('watch', ['compile'], function () {
+gulp.task('test', ['compile'], function () {
+    gulp.src('dist/test/**/*.js')
+        .pipe(mocha());
+});
+
+gulp.task('watch', ['compile', 'test'], function () {
     gulp.watch("**/*.ts", ['compile']);
 });
 
-gulp.task('default', ['compile']);
+gulp.task('default', ['compile', 'test']);
