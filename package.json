@@ -15,6 +15,7 @@
     "@types/yargs": "^8.0.2",
     "chai": "^4.1.2",
     "gulp": "^3.9.1",
+    "gulp-mocha": "^4.3.1",
     "gulp-typescript": "^3.2.3",
     "mocha": "^4.0.1",
     "typescript": "^2.5.3"
